@@ -1,6 +1,6 @@
-# ceph
+# uam
 
-> ceph web
+> uam web
 
 ## Build Setup
 
