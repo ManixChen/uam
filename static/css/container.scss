@@ -1,0 +1,129 @@
+
+html,body,
+input,textarea,span,i,b,small,
+div,p,
+h1,h2,h3,h4,h5,h6,
+ul,ol,li{
+  margin:0;padding:0;
+}
+ul,ol{
+  list-style: none;
+}
+a{
+  color: #303030;
+}
+$font_size_normal:14px;
+$nav_color: #222;
+$nav_border: 1px solid #080808;
+$nav_border_bottom:1px solid  rgba(116, 116, 116, 0.5);
+
+$lmenu_width:220px;
+$lside_color: rgba(0, 0, 0, 0.9);
+$lside_color_hover: rgba(0, 0, 0, 0.9);
+$mene_item_color: #aeb2b7;
+$mene_item_color_hover: #00b3ee;
+
+html,body,#app{
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+.visible-xs{
+  display: none;
+}
+.margin_left10{
+  margin-left: 10px;
+}
+.cursor{
+  cursor: pointer;
+}
+.full_height{
+  height: 100%;
+}
+.scrollY{
+  overflow-y: auto;;
+}
+
+// 导航
+.nav_color{
+  background: $nav_color;
+  border: $nav_border;
+  border-bottom: $nav_border_bottom;
+}
+
+
+.btn-dropdown{
+  height: 30px;
+  width: 100%;
+  padding: 8px 0 2px -2px ;
+  font-size: 1.1em;
+  .dropdown{
+    display: inline-block;
+    width: auto;
+    button{
+      border:none;
+      background: #fff;
+      font-weight: 700;
+    }
+  }
+  h5{
+    display: inline-block;
+  }
+  .pull-right{
+    float: right;
+    margin-right: 20px;
+  }
+
+}
+
+.el-container{
+  &.wrapper{
+    &:after{
+      content: "";
+      display: table;
+      clear: both;
+    }
+    flex-flow: column;
+    .main-container{
+        display: flex;;
+        flex-flow: row;
+        .el-aside{
+          flex-basis: $lmenu_width;
+          .sidebar{
+            >ul{
+                background: $lside_color;
+                li,div{
+                  background: $lside_color_hover;
+                  color: $mene_item_color;
+                  &:hover{
+                    background: $lside_color_hover;
+                    color: $mene_item_color_hover;
+                  }
+                }
+              }
+              ul{
+                background: $lside_color_hover;
+                &:hover{
+                  background: $lside_color_hover;
+                }
+              }
+            }
+          }
+        }
+        >.el-container{
+          flex: 1;
+        }
+        .footer{
+          font-size: $font_size_normal;
+        }
+  }
+}
+
+
+@media screen and (max-width:767px) {
+
+  .visible-xs{
+    display: inline-block;
+  }
+}
